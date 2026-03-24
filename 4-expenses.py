@@ -21,4 +21,3 @@ elif len(user_input_mod) == 2:
 total_amount = rubles + kopecks / 100
 # Выводим результат
 print(f"{total_amount:.2f} ₽")
-
