@@ -1,15 +1,19 @@
 import sys
 
+# Базовый клас ошибок
+class LibraryError(Exception):
+    """Базовое исключение"""
+    pass
 # Кастомные исключения
-class MissingArgumentError(Exception):
+class MissingArgumentError(LibraryError):
     """Исключение для случая отсутствия обязательных аргументов"""
     pass
 
-class InvalidActionError(Exception):
+class InvalidActionError(LibraryError):
     """Исключение для недопустимого действия"""
     pass
 
-class InvalidSortCriteriaError(Exception):
+class InvalidSortCriteriaError(LibraryError):
     """Исключение для недопустимого критерия сортировки"""
     pass
 
@@ -85,7 +89,7 @@ def main():
         print("Проверьте правильность передачи аргументов.")
         sys.exit(1)
 
-    except Exception as e:
+    except LibraryError as e:
         print(f"Произошла непредвиденная ошибка: {e}")
         sys.exit(1)
 
